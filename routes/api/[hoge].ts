@@ -19,7 +19,7 @@ export const handler: Handlers = {
     const res = new Response(body);
     res.headers.set(
       "Access-Control-Allow-Origin",
-      "https://tatenodev-fresh-app.deno.dev/",
+      "https://tatenodev-fresh-app.deno.dev",
     );
 
     return res;
