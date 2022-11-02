@@ -13,9 +13,15 @@ const JOKES = [
   "An SEO expert walked into a bar, pub, inn, tavern, hostelry, public house.",
 ];
 
-export const handler: Handlers<string> = {
+export const handler: Handlers = {
   GET(_, ctx) {
     const body = JOKES[Number(ctx.params.hoge)];
-    return new Response(body);
+    const res = new Response(body);
+    res.headers.set(
+      "Access-Control-Allow-Origin",
+      "https://tatenodev-fresh-app.deno.dev/",
+    );
+
+    return res;
   },
 };
