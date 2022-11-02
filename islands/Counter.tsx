@@ -7,11 +7,31 @@ interface CounterProps {
 
 export default function Counter(props: CounterProps) {
   const [count, setCount] = useState(props.start);
+  const [index, setIndex] = useState("0");
+  const [hoge, setHoge] = useState("none");
+
+  const onFetch = async () => {
+    const res = await fetch(`http://localhost:8000/api/${index}`);
+    setHoge(await res.text());
+  };
+
   return (
-    <div>
-      <p>{count}</p>
-      <Button onClick={() => setCount(count - 1)}>-1</Button>
-      <Button onClick={() => setCount(count + 1)}>+1</Button>
-    </div>
+    <>
+      <div>
+        <p>{count}</p>
+        <Button onClick={() => setCount(count - 1)}>-1</Button>
+        <Button onClick={() => setCount(count + 1)}>+1</Button>
+      </div>
+      <div>
+        index:{" "}
+        <input
+          type="number"
+          value={index}
+          onChange={(e) => setIndex(e.currentTarget.value)}
+        />
+        <Button onClick={onFetch}>Fetch</Button>
+        Result: {hoge}
+      </div>
+    </>
   );
 }
