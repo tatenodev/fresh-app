@@ -12,7 +12,8 @@ export default function Counter(props: CounterProps) {
 
   const onFetch = async () => {
     const { origin } = location;
-    const res = await fetch(`${origin}/api/${index}`);
+    // const res = await fetch(`${origin}/api/${index}`);
+    const res = await fetch(`api/${index}`);
     setHoge(await res.text());
   };
 
