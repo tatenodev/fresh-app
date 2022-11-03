@@ -17,10 +17,10 @@ export const handler: Handlers = {
   GET(_, ctx) {
     const body = JOKES[Number(ctx.params.hoge)];
     const res = new Response(body);
-    res.headers.set(
-      "Access-Control-Allow-Origin",
-      "https://tatenodev-fresh-app.deno.dev",
-    );
+    // res.headers.set(
+    //   "Access-Control-Allow-Origin",
+    //   "https://tatenodev-fresh-app.deno.dev",
+    // );
 
     return res;
   },
