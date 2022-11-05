@@ -15,8 +15,17 @@ export default function Counter(props: CounterProps) {
     setHoge(await res.text());
   };
 
+  const createTodos = async () => {
+    const res = await fetch("api/create_todos", {
+      method: "POST",
+      body: "hoge",
+    });
+    console.log("res", res);
+  };
+
   return (
     <>
+      <button onClick={createTodos}>clic</button>
       <div>
         <p>{count}</p>
         <Button onClick={() => setCount(count - 1)}>-1</Button>

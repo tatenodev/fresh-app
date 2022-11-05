@@ -1,7 +1,7 @@
 import { Head } from "$fresh/runtime.ts";
 import { Handlers, PageProps } from "$fresh/server.ts";
 import Counter from "../islands/Counter.tsx";
-import { jokeHandler } from "./api/joke.ts";
+import { handler as jokeHandler } from "./api/joke.ts";
 
 export const handler: Handlers<string> = {
   async GET(req, ctx) {
