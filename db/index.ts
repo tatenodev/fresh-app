@@ -6,10 +6,10 @@ const getEnv = () => {
     console.log("for deno deploy");
     return {
       DB_NAME: Deno.env.get("DB_NAME"),
-      DB_HOST: Deno.env.get("DB_NAME"),
-      DB_USER: Deno.env.get("DB_NAME"),
-      DB_PASSWORD: Deno.env.get("DB_NAME"),
-      DB_PORT: Deno.env.get("DB_NAME"),
+      DB_HOST: Deno.env.get("DB_HOST"),
+      DB_USER: Deno.env.get("DB_USER"),
+      DB_PASSWORD: Deno.env.get("DB_PASSWORD"),
+      DB_PORT: Deno.env.get("DB_PORT"),
     };
   } else {
     console.log("for local");
