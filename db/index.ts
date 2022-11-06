@@ -1,10 +1,8 @@
 import { Pool } from "posgres";
 import { config } from "dotenv";
 
-const hostname = Deno.hostname();
-
 const getEnv = () => {
-  if (hostname === "tatenodev-fresh-app.deno.dev") {
+  if (Deno.env.get("LOCATION") === "production") {
     console.log("for deno deploy");
     return {
       DB_NAME: Deno.env.get("DB_NAME"),
