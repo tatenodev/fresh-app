@@ -31,20 +31,4 @@ const pool = new Pool(
   true,
 );
 
-const connection = await pool.connect();
-
-export const createTodoTable = async () => {
-  try {
-    await connection.queryObject`
-    CREATE TABLE IF NOT EXISTS todos (
-      id SERIAL PRIMARY KEY,
-      title TEXT NOT NULL
-    )
-  `;
-  } catch (err) {
-    console.log("err", err);
-    throw err;
-  } finally {
-    connection.release();
-  }
-};
+export const connection = await pool.connect();

@@ -1,5 +1,5 @@
 import { Handlers } from "$fresh/server.ts";
-import { createTodoTable } from "../../db/index.ts";
+import { createTodosTable } from "../../db/todos/index.ts";
 
 // ちゃんと読め！
 // https://fresh.deno.dev/docs/concepts/routes#:~:text=handler%27s%20render%20function.-,Handler%20route,-Let%27s%20look%20at
@@ -11,7 +11,7 @@ export const handler: Handlers = {
     });
     console.log("success");
 
-    createTodoTable();
+    createTodosTable();
 
     return res;
   },

@@ -9,23 +9,32 @@ export default function Counter(props: CounterProps) {
   const [count, setCount] = useState(props.start);
   const [index, setIndex] = useState("0");
   const [hoge, setHoge] = useState("none");
+  const [todos, setTodos] = useState([]);
 
   const onFetch = async () => {
     const res = await fetch(`api/${index}`);
     setHoge(await res.text());
   };
 
-  const createTodos = async () => {
-    const res = await fetch("api/create_todos", {
+  const addTodo = async () => {
+    const res = await fetch("api/add_todo", {
       method: "POST",
-      body: "hoge",
+      body: JSON.stringify({ title: "hoge text" }),
     });
     console.log("res", res);
   };
 
+  const getTodos = async () => {
+    const res = await fetch("api/get_todos");
+    const data = await res.json() as [];
+    setTodos(data);
+  };
+
   return (
     <>
-      <button onClick={createTodos}>clic</button>
+      <button onClick={addTodo}>add todo</button>
+      <button onClick={getTodos}>get todos</button>
+      <div>resut: {JSON.stringify(todos)}</div>
       <div>
         <p>{count}</p>
         <Button onClick={() => setCount(count - 1)}>-1</Button>

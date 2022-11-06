@@ -5,18 +5,22 @@
 import config from "./deno.json" assert { type: "json" };
 import * as $0 from "./routes/[name].tsx";
 import * as $1 from "./routes/api/[hoge].ts";
-import * as $2 from "./routes/api/create_todos.ts";
-import * as $3 from "./routes/api/joke.ts";
-import * as $4 from "./routes/index.tsx";
+import * as $2 from "./routes/api/add_todo.ts";
+import * as $3 from "./routes/api/create_todos.ts";
+import * as $4 from "./routes/api/get_todos.ts";
+import * as $5 from "./routes/api/joke.ts";
+import * as $6 from "./routes/index.tsx";
 import * as $$0 from "./islands/Counter.tsx";
 
 const manifest = {
   routes: {
     "./routes/[name].tsx": $0,
     "./routes/api/[hoge].ts": $1,
-    "./routes/api/create_todos.ts": $2,
-    "./routes/api/joke.ts": $3,
-    "./routes/index.tsx": $4,
+    "./routes/api/add_todo.ts": $2,
+    "./routes/api/create_todos.ts": $3,
+    "./routes/api/get_todos.ts": $4,
+    "./routes/api/joke.ts": $5,
+    "./routes/index.tsx": $6,
   },
   islands: {
     "./islands/Counter.tsx": $$0,
