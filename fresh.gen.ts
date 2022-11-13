@@ -9,8 +9,12 @@ import * as $2 from "./routes/api/add_todo.ts";
 import * as $3 from "./routes/api/create_todos.ts";
 import * as $4 from "./routes/api/get_todos.ts";
 import * as $5 from "./routes/api/joke.ts";
-import * as $6 from "./routes/index.tsx";
-import * as $7 from "./routes/islands_wrapper/index.tsx";
+import * as $6 from "./routes/api/login.ts";
+import * as $7 from "./routes/api/logout.ts";
+import * as $8 from "./routes/auth/index.tsx";
+import * as $9 from "./routes/index.tsx";
+import * as $10 from "./routes/islands_wrapper/index.tsx";
+import * as $11 from "./routes/secret.tsx";
 import * as $$0 from "./islands/Counter.tsx";
 
 const manifest = {
@@ -21,8 +25,12 @@ const manifest = {
     "./routes/api/create_todos.ts": $3,
     "./routes/api/get_todos.ts": $4,
     "./routes/api/joke.ts": $5,
-    "./routes/index.tsx": $6,
-    "./routes/islands_wrapper/index.tsx": $7,
+    "./routes/api/login.ts": $6,
+    "./routes/api/logout.ts": $7,
+    "./routes/auth/index.tsx": $8,
+    "./routes/index.tsx": $9,
+    "./routes/islands_wrapper/index.tsx": $10,
+    "./routes/secret.tsx": $11,
   },
   islands: {
     "./islands/Counter.tsx": $$0,
